@@ -10,13 +10,14 @@
 class ScalarConverter 
 {
     private :
+      ScalarConverter() throw();
+        ScalarConverter( const ScalarConverter &copy)throw();
+         ScalarConverter& operator=(const ScalarConverter &copy)throw();
+       ~ScalarConverter()throw();
 
     public :
-        ScalarConverter(std::string string);
-        ScalarConverter( const ScalarConverter &copy);
-        virtual void converter(std::string string) = 0 ;
-        ScalarConverter& operator=(const ScalarConverter &copy);
-        ~ScalarConverter();
+        static  void converter(std::string literal) throw();
+
 };
 
 #endif
